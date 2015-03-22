@@ -1,0 +1,31 @@
+Basic use of Google's new reCAPTCHA API version 2.0
+-------------------------------------------------------------------------------------
+This will assume that the web developer has already set up an account with Google 
+(https://developers.google.com/recaptcha/) and that the SITE_KEY (in index.php) 
+and site's SECRET_KEY (in process.php) are available. This will not work properly 
+until the keys are properly entered.
+
+
+File List:
+-------------------------------------------------------------------------------------
+
+- index.php
+	This will display a short form with Google's reCAPTCHA div element. Replace 
+	SITE_KEY with one provided by Google for your site. Upon the user's 
+	confirmation, the form is submitted to process.php for a reCAPTCHA 
+	response. Once the data is processed, and a desireable response is returned, 
+	you may continue.
+
+- process.php 
+	Dependent of index.php via AJAX (JQuery) POST call; will return the result of 
+	the subsequent call to Google for a response on the reCAPTCHA interaction. 
+	Replace SECRET_KEY with your site's secret key provided by Google.
+
+
+Design
+-------------------------------------------------------------------------------------
+
+	Index.php will request response from process.php via AJAX call. Upon 
+	confirmation (success), programmer may proceed. Process.php will send
+	POST request to Google for sucess confirmation.r
+
